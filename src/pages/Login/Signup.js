@@ -1,8 +1,47 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { toast } from 'react-hot-toast';
 import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router-dom';
+import { AuthContex } from '../../context/AuthProvider/AuthProvider';
 
 const Signup = () => {
+    const { createUser, googleSignIn, updateUserProfile } = useContext(AuthContex);
+
+    const handleSignup = event => {
+        event.preventDefault()
+        const form = event.target;
+        const name = form.name.value;
+        const photoURL = form.photo.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(name, email, password);
+
+        createUser(email, password)
+            .then(result => {
+                console.log(result.user)
+                form.reset()
+                handleUpdateProfileUser(name, photoURL)
+            })
+            .catch(e => console.error(e));
+    };
+
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+            .then(result => console.log(result.user))
+            .catch(e => console.log(e.message))
+    }
+
+    const handleUpdateProfileUser = (name, photoURL) => {
+        const profile = {
+            displayName: name,
+            photoURL: photoURL
+        }
+        updateUserProfile(profile)
+            .then(result => { })
+            .catch(e => console.error(e))
+    }
+
+
     return (
         <div className='mb-8'>
             <div className="flex flex-col items-center min-h-screen pt-6 sm:justify-center sm:pt-0 bg-gray-50">
@@ -13,7 +52,7 @@ const Signup = () => {
                             Sign Up
                         </h3>
                     </div>
-                    <form>
+                    <form onSubmit={handleSignup}>
                         <div>
                             <label
                                 htmlFor="name"
@@ -22,7 +61,7 @@ const Signup = () => {
                                 Full Name
                             </label>
                             <div className="flex flex-col items-start">
-                                <input type="text" name='name' class="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " />
+                                <input type="text" name='name' class="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required />
                             </div>
                         </div>
                         <div className="mt-4">
@@ -33,7 +72,7 @@ const Signup = () => {
                                 Email
                             </label>
                             <div className="flex flex-col items-start">
-                                <input type="email" name='email' class="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " />
+                                <input type="email" name='email' class="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required />
                             </div>
                         </div>
                         <div className="mt-4">
@@ -44,7 +83,7 @@ const Signup = () => {
                                 Password
                             </label>
                             <div className="flex flex-col items-start">
-                                <input type="password" name='password' class="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " />
+                                <input type="password" name='password' class="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required />
                             </div>
                         </div>
                         <div className="mt-4">
@@ -55,7 +94,7 @@ const Signup = () => {
                                 Photo URL
                             </label>
                             <div className="flex flex-col items-start">
-                                <input type="text" name='photo' class="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " />
+                                <input type="text" name='photo' class="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required />
                             </div>
                         </div>
                         <div className="lg:flex items-center justify-between mt-7">
@@ -78,7 +117,7 @@ const Signup = () => {
                     </form>
                     <div className="divider text-slate-500 font-bold mb-5">OR</div>
                     <div className='flex justify-center'>
-                        <button className='bg-green-500 hover:bg-green-400 font-semibold text-gray-100 rounded px-8 py-2 flex justify-center gap-3 items-center'> <FcGoogle className='w-6 h-6'></FcGoogle> Sign In With Google</button>
+                        <button onClick={handleGoogleSignIn} className='bg-green-500 hover:bg-green-400 font-semibold text-gray-100 rounded px-8 py-2 flex justify-center gap-3 items-center'> <FcGoogle className='w-6 h-6'></FcGoogle> Sign In With Google</button>
                     </div>
                 </div>
             </div>

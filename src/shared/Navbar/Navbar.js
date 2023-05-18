@@ -1,8 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContex } from "../../../src/context/AuthProvider/AuthProvider";
 
 const Navbar = () => {
-    const [user, setUser] = useState('');
+    // const [user, setUser] = useState('');
+    const { user, logOut } = useContext(AuthContex);
+    console.log(user)
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.error(error))
+    }
 
     const menuItem = <>
         <li><Link to='/'>Home</Link></li>
@@ -11,7 +20,7 @@ const Navbar = () => {
         {user ? <>
             <li><Link to='/addtoy'>Add A Toy</Link></li>
             <li><Link to='/mytoy'>My Toy</Link></li>
-            <li><Link to='/signout'>Sign out</Link></li>
+            <button className="btn btn-active btn-link" onClick={handleLogOut}>Sign Out</button>
         </> :
             <li><Link to='/signin'>Sign in</Link></li>
         }
@@ -38,10 +47,10 @@ const Navbar = () => {
                 </ul>
             </div>
             {
-                user && <div className="navbar-end">
-                    <Link><div className="avatar">
-                        <div className="w-16 rounded-full">
-                            <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" alt='user' />
+                user && <div className="navbar-end mr-4">
+                    <Link><div title={user?.displayName} className="avatar">
+                        <div className="w-14 rounded-full">
+                            <img src={user?.photoURL} alt='user' />
                         </div>
                     </div></Link>
                 </div>

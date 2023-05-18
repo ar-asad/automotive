@@ -1,8 +1,34 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { FcGoogle } from "react-icons/fc";
+import { AuthContex } from '../../context/AuthProvider/AuthProvider';
 
 const Login = () => {
+    const { signIn, googleSignIn } = useContext(AuthContex);
+
+
+    const handleLogin = event => {
+        event.preventDefault()
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
+
+        signIn(email, password)
+            .then(result => {
+                form.reset();
+                console.log(result.user)
+            })
+            .catch(e => console.error(e));
+    }
+
+    const handleGoogleLogIn = () => {
+        googleSignIn()
+            .then(result => console.log(result.user))
+            .catch(e => console.log(e.message))
+    }
+
+
     return (
         <div>
             <div className="flex flex-col items-center min-h-screen pt-6 sm:justify-center sm:pt-0 bg-gray-50">
@@ -13,7 +39,7 @@ const Login = () => {
                             Sign In
                         </h3>
                     </div>
-                    <form>
+                    <form onSubmit={handleLogin}>
                         <div className="mt-4">
                             <label
                                 htmlFor="email"
@@ -55,7 +81,7 @@ const Login = () => {
                         </div>
                     </form> <div className="divider text-slate-500 font-bold mb-5">OR</div>
                     <div className='flex justify-center'>
-                        <button className='bg-green-500 hover:bg-green-400 font-semibold text-gray-100 rounded px-8 py-2 flex justify-center gap-3 items-center'> <FcGoogle className='w-6 h-6'></FcGoogle> Sign Up With Google</button>
+                        <button onClick={handleGoogleLogIn} className='bg-green-500 hover:bg-green-400 font-semibold text-gray-100 rounded px-8 py-2 flex justify-center gap-3 items-center'> <FcGoogle className='w-6 h-6'></FcGoogle> Sign Up With Google</button>
                     </div>
 
                 </div>
