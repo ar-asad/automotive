@@ -1,9 +1,10 @@
 import React from 'react';
+import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router-dom';
 
 const Signup = () => {
     return (
-        <div>
+        <div className='mb-8'>
             <div className="flex flex-col items-center min-h-screen pt-6 sm:justify-center sm:pt-0 bg-gray-50">
 
                 <div className="w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-md sm:max-w-md sm:rounded-lg">
@@ -75,6 +76,10 @@ const Signup = () => {
 
                         </div>
                     </form>
+                    <div className="divider text-slate-500 font-bold mb-5">OR</div>
+                    <div className='flex justify-center'>
+                        <button className='bg-green-500 hover:bg-green-400 font-semibold text-gray-100 rounded px-8 py-2 flex justify-center gap-3 items-center'> <FcGoogle className='w-6 h-6'></FcGoogle> Sign In With Google</button>
+                    </div>
                 </div>
             </div>
         </div>
