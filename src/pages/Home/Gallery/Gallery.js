@@ -1,4 +1,12 @@
 import React from 'react';
+import sportscar1 from '../../../assets/images/gallery/sport5.webp'
+import sportscar2 from '../../../assets/images/gallery/sportcar4.webp'
+import truckcar1 from '../../../assets/images/gallery/truck3.jpg'
+import truckcar2 from '../../../assets/images/gallery/truck4.jpg'
+import policecar1 from '../../../assets/images/gallery/policecar11.jpg'
+import policecar2 from '../../../assets/images/gallery/policecar12.jpg'
+import regularcar1 from '../../../assets/images/gallery/minicar5.webp'
+import regularcar2 from '../../../assets/images/gallery/minicar1.jpg'
 
 const Gallery = () => {
     return (
@@ -14,19 +22,19 @@ const Gallery = () => {
                             <img
                                 alt="gallery"
                                 className="block h-full w-full rounded-lg object-cover object-center"
-                                src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(70).webp" />
+                                src={sportscar1} />
                         </div>
                         <div className="w-1/2 p-1 md:p-2">
                             <img
                                 alt="gallery"
                                 className="block h-full w-full rounded-lg object-cover object-center"
-                                src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(72).webp" />
+                                src={regularcar2} />
                         </div>
                         <div className="w-full p-1 md:p-2">
                             <img
                                 alt="gallery"
                                 className="block h-full w-full rounded-lg object-cover object-center"
-                                src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp" />
+                                src={sportscar2} />
                         </div>
                     </div>
                     <div className="flex w-1/2 flex-wrap">
@@ -34,31 +42,31 @@ const Gallery = () => {
                             <img
                                 alt="gallery"
                                 className="block h-full w-full rounded-lg object-cover object-center"
-                                src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(74).webp" />
+                                src={truckcar2} />
                         </div>
                         <div className="w-1/2 p-1 md:p-2">
                             <img
                                 alt="gallery"
                                 className="block h-full w-full rounded-lg object-cover object-center"
-                                src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(75).webp" />
+                                src={truckcar1} />
                         </div>
                         <div className="w-1/2 p-1 md:p-2">
                             <img
                                 alt="gallery"
                                 className="block h-full w-full rounded-lg object-cover object-center"
-                                src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(77).webp" />
+                                src={policecar2} />
                         </div>
                         <div className="w-1/2 p-1 md:p-2">
                             <img
                                 alt="gallery"
                                 className="block h-full w-full rounded-lg object-cover object-center"
-                                src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(77).webp" />
+                                src={policecar1} />
                         </div>
                         <div className="w-1/2 p-1 md:p-2">
                             <img
                                 alt="gallery"
                                 className="block h-full w-full rounded-lg object-cover object-center"
-                                src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(77).webp" />
+                                src={regularcar1} />
                         </div>
 
                     </div>

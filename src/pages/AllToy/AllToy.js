@@ -1,10 +1,11 @@
-import { useQuery } from '@tanstack/react-query';
 import React, { useEffect, useState } from 'react';
 import Loading from '../../shared/Loading/Loading';
 import AllToyCar from '../AllToyCar/AllToyCar';
 
+
 const AllToy = () => {
     const [allCars, setAllCars] = useState([]);
+    const [fetchDataLoading, setFectchDataLoading] = useState(false)
 
     // const { data: cars = [], isLoading } = useQuery({
     //     queryKey: ['chef'],
@@ -25,14 +26,20 @@ const AllToy = () => {
     // if (isLoading) {
     //     <Loading></Loading>
     // }
-
     useEffect(() => {
+        setFectchDataLoading(true);
         fetch('http://localhost:5000/cars')
             .then(res => res.json())
-            .then(data => setAllCars(data))
+            .then(data => {
+
+                setAllCars(data)
+                setFectchDataLoading(false)
+            })
     }, [])
 
-
+    if (fetchDataLoading) {
+        <Loading></Loading>
+    }
     return (
         <div className="overflow-x-auto w-full">
             <table className="table w-full">

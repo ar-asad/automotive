@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const ViewDetailsCar = () => {
     const loaderData = useLoaderData();
@@ -24,7 +24,9 @@ const ViewDetailsCar = () => {
                     </div>
                     <p><span className='text-lg text-gray-800 font-medium '>Description </span> : {description}</p>
                     <div className="card-actions text-end">
-                        <button className="btn btn-success text-gray-100 bg-green-500 rounded">&rarr; Go Back </button>
+                        <Link to='/alltoy'>
+                            <button className="btn btn-success text-gray-100 bg-green-500 rounded">&rarr; Go Back </button>
+                        </Link>
                     </div>
                 </div>
             </div>
