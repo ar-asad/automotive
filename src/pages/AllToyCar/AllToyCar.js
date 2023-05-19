@@ -1,8 +1,9 @@
 import React from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { Link } from 'react-router-dom';
 
 const AllToyCar = ({ car, index }) => {
-    const { toy_name, sub_category, seller_name, price, available_quantity, picture } = car;
+    const { toy_name, sub_category, seller_name, price, available_quantity, picture, _id } = car;
     return (
         <tr>
             <th>
@@ -25,7 +26,9 @@ const AllToyCar = ({ car, index }) => {
             <td>${price}</td>
             <td>{available_quantity}</td>
             <th>
-                <button className="btn btn-success bg-green-500 text-gray-200 btn-xs"> view details</button>
+                <Link to={`/alltoy/${_id}`}>
+                    <button className="btn btn-success bg-green-500 text-gray-200 btn-xs"> view details</button>
+                </Link>
             </th>
         </tr>
     );

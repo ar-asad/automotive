@@ -4,6 +4,7 @@ import Blog from "../../pages/Blog/Blog";
 import Login from "../../pages/Login/Login";
 import Signup from "../../pages/Login/Signup";
 import MyToys from "../../pages/MyToys/MyToys";
+import ViewDetailsCar from "../../pages/ViewDetailsCar/ViewDetailsCar";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -44,6 +45,11 @@ const router = createBrowserRouter([
                 path: '/mytoy',
                 element: <PrivateRoute><MyToys></MyToys> </PrivateRoute>
             },
+            {
+                path: '/alltoy/:id',
+                element: <PrivateRoute><ViewDetailsCar></ViewDetailsCar></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/cars/${params.id}`)
+            }
 
         ]
     }

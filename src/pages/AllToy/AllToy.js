@@ -6,25 +6,32 @@ import AllToyCar from '../AllToyCar/AllToyCar';
 const AllToy = () => {
     const [allCars, setAllCars] = useState([]);
 
-    const { data: cars = [], isLoading } = useQuery({
-        queryKey: ['chef'],
-        queryFn: async () => {
-            const res = await fetch("/toycar.json")
-            const data = await res.json();
-            return data;
-        }
-    });
+    // const { data: cars = [], isLoading } = useQuery({
+    //     queryKey: ['chef'],
+    //     queryFn: async () => {
+    //         const res = await fetch("/toycar.json")
+    //         const data = await res.json();
+    //         return data;
+    //     }
+    // });
+
+    // useEffect(() => {
+    //     if (cars) {
+    //         setAllCars(cars);
+    //     }
+    // }, [cars]);
+    // console.log(allCars)
+
+    // if (isLoading) {
+    //     <Loading></Loading>
+    // }
 
     useEffect(() => {
-        if (cars) {
-            setAllCars(cars);
-        }
-    }, [cars]);
-    console.log(allCars)
+        fetch('http://localhost:5000/cars')
+            .then(res => res.json())
+            .then(data => setAllCars(data))
+    }, [])
 
-    if (isLoading) {
-        <Loading></Loading>
-    }
 
     return (
         <div className="overflow-x-auto w-full">
@@ -44,7 +51,7 @@ const AllToy = () => {
                 </thead>
                 <tbody>
                     {
-                        allCars.map((car, index) => <AllToyCar key={index} index={index} car={car}></AllToyCar>)
+                        allCars.map((car, index) => <AllToyCar key={car._id} index={index} car={car}></AllToyCar>)
                     }
                 </tbody>
             </table>
