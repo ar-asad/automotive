@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { AuthContex } from "../../../src/context/AuthProvider/AuthProvider";
+import { BsFillCarFrontFill } from "react-icons/bs";
 
 const Navbar = () => {
     // const [user, setUser] = useState('');
@@ -14,15 +15,50 @@ const Navbar = () => {
     }
 
     const menuItem = <>
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/alltoy'>All Toys</Link></li>
-        <li><Link to='/blog'>Blogs</Link></li>
+        <li>
+            <NavLink to='/' style={({ isActive }) => {
+                return {
+                    color: isActive ? "#22c55e" : "",
+                };
+            }}>Home
+            </NavLink>
+        </li>
+        <li>
+            <NavLink to='/alltoy' style={({ isActive }) => {
+                return {
+                    color: isActive ? "#22c55e" : "",
+                };
+            }}>All Toys
+            </NavLink>
+        </li>
+        <li>
+            <NavLink to='/blog' style={({ isActive }) => {
+                return {
+                    color: isActive ? "#22c55e" : "",
+                };
+            }}>Blogs
+            </NavLink>
+        </li>
         {user ? <>
-            <li><Link to='/addtoy'>Add A Toy</Link></li>
-            <li><Link to='/mytoy'>My Toy</Link></li>
+            <li>
+                <NavLink to='/addtoy' style={({ isActive }) => {
+                    return {
+                        color: isActive ? "#22c55e" : "",
+                    };
+                }}>Add A Toy
+                </NavLink>
+            </li>
+            <li>
+                <NavLink to='/mytoy' style={({ isActive }) => {
+                    return {
+                        color: isActive ? "#22c55e" : "",
+                    };
+                }}>My Toy
+                </NavLink>
+            </li>
             <button className="btn btn-active btn-link" onClick={handleLogOut}>Sign Out</button>
         </> :
-            <li><Link to='/signin'>Sign in</Link></li>
+            <li><NavLink to='/signin'>Sign in</NavLink></li>
         }
 
 
@@ -39,7 +75,8 @@ const Navbar = () => {
                         {menuItem}
                     </ul>
                 </div>
-                <Link className="btn btn-ghost normal-case text-xl">Toddler <span className='text-green-500 ms-2'>Car</span></Link>
+                <Link to='/'><BsFillCarFrontFill className='w-8 h-8 ms-2 text-green-500'></BsFillCarFrontFill></Link>
+                <Link className="btn btn-ghost font-bold text-xl">Toddler <span className='text-green-500 ms-2'>Car</span></Link>
             </div>
             <div className="navbar-start hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

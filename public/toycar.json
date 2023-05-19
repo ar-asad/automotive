@@ -1,0 +1,222 @@
+[
+    {
+        "picture": "https://i.ibb.co/c62Ndh3/sportcar3.jpg",
+        "toy_name": "Speed Blaze",
+        "sub_category": "Sports-car",
+        "seller_name": "Robert",
+        "seller_email": "hridu@toyworld.com",
+        "price": 23.99,
+        "rating": 7.5,
+        "available_quantity": 12,
+        "description": " Designed for thrill-seekers and racing enthusiasts, this sleek and aerodynamic car is built for high-speed action. With its streamlined body and precision-engineered features."
+    },
+    {
+        "picture": "https://i.ibb.co/6Yrx9ny/sportcar2.jpg",
+        "toy_name": "Turbo Thrasher",
+        "sub_category": "Sports-car",
+        "seller_name": "William",
+        "seller_email": "kaiko@toyworld.com",
+        "price": 24.99,
+        "rating": 5.5,
+        "available_quantity": 20,
+        "description": " Designed for thrill-seekers and racing enthusiasts, this sleek and aerodynamic car is built for high-speed action. With its streamlined body and precision-engineered features."
+    },
+    {
+        "picture": "https://i.ibb.co/HTJVbJK/sportcar4.webp",
+        "toy_name": "Nitro Racer",
+        "sub_category": "Sports-car",
+        "seller_name": "David",
+        "seller_email": "hinja@toyworld.com",
+        "price": 34.99,
+        "rating": 3.5,
+        "available_quantity": 34,
+        "description": " Designed for thrill-seekers and racing enthusiasts, this sleek and aerodynamic car is built for high-speed action. With its streamlined body and precision-engineered features."
+    },
+    {
+        "picture": "https://i.ibb.co/60VGHDP/sportscar1.jpg",
+        "toy_name": "Velocity Viper",
+        "sub_category": "Sports-car",
+        "seller_name": "Michael",
+        "seller_email": "hridu@toyworld.com",
+        "price": 25.99,
+        "rating": 8.5,
+        "available_quantity": 14,
+        "description": " Designed for thrill-seekers and racing enthusiasts, this sleek and aerodynamic car is built for high-speed action. With its streamlined body and precision-engineered features."
+    },
+    {
+        "picture": "https://i.ibb.co/f1vnFhQ/sport5.webp",
+        "toy_name": "Power Surge",
+        "sub_category": "Sports-car",
+        "seller_name": "Richard",
+        "seller_email": "toyota@toyworld.com",
+        "price": 25.99,
+        "rating": 6.5,
+        "available_quantity": 26,
+        "description": " Designed for thrill-seekers and racing enthusiasts, this sleek and aerodynamic car is built for high-speed action. With its streamlined body and precision-engineered features."
+    },
+    {
+        "picture": "https://i.ibb.co/N3Dx0dK/policecar13.webp",
+        "toy_name": "Speedster",
+        "sub_category": "Police-car",
+        "seller_name": "James",
+        "seller_email": "info@toyworld.com",
+        "price": 29.99,
+        "rating": 4.5,
+        "available_quantity": 15,
+        "description": "Introducing the ultimate police toy car - the Turbo Patrol Cruiser! This high-speed, sleek cruiser is designed to keep the city streets safe and uphold the law."
+    },
+    {
+        "picture": "https://i.ibb.co/s9kjCJg/policecar11.jpg",
+        "toy_name": "Dominator",
+        "sub_category": "Police-car",
+        "seller_name": "Velocity Motors",
+        "seller_email": "Cate@toyworld.com",
+        "price": 34.99,
+        "rating": 5.5,
+        "available_quantity": 20,
+        "description": "Introducing the ultimate police toy car - the Turbo Patrol Cruiser! This high-speed, sleek cruiser is designed to keep the city streets safe and uphold the law."
+    },
+    {
+        "picture": "https://i.ibb.co/sw8SZSs/police3.jpg",
+        "toy_name": "Enforcer",
+        "sub_category": "Police-car",
+        "seller_name": "John",
+        "seller_email": "Johon@toyworld.com",
+        "price": 26.99,
+        "rating": 8.5,
+        "available_quantity": 12,
+        "description": "Introducing the ultimate police toy car - the Turbo Patrol Cruiser! This high-speed, sleek cruiser is designed to keep the city streets safe and uphold the law."
+    },
+    {
+        "picture": "https://i.ibb.co/F61yxxv/police6.jpg",
+        "toy_name": "Justice Jet",
+        "sub_category": "Police-car",
+        "seller_name": "Thomas",
+        "seller_email": "Haw@toyworld.com",
+        "price": 22.99,
+        "rating": 7.5,
+        "available_quantity": 50,
+        "description": "Introducing the ultimate police toy car - the Turbo Patrol Cruiser! This high-speed, sleek cruiser is designed to keep the city streets safe and uphold the law."
+    },
+    {
+        "picture": "https://i.ibb.co/nR0ZQH8/policecar12.jpg",
+        "toy_name": "Thunderbolt",
+        "sub_category": "Police-car",
+        "seller_name": "Benjamin",
+        "seller_email": "thanda@toyworld.com",
+        "price": 28.99,
+        "rating": 6.5,
+        "available_quantity": 10,
+        "description": "Introducing the ultimate police toy car - the Turbo Patrol Cruiser! This high-speed, sleek cruiser is designed to keep the city streets safe and uphold the law."
+    },
+    {
+        "picture": "https://i.ibb.co/qjwD59S/minicar5.webp",
+        "toy_name": "Turbo Racer",
+        "sub_category": "Regular-car",
+        "seller_name": "Samuel",
+        "seller_email": "ninja@toyworld.com",
+        "price": 28.99,
+        "rating": 6.5,
+        "available_quantity": 12,
+        "description": "Get ready for exhilarating speed and thrilling races with our latest regular toy car, the Turbo Racer! This sleek and aerodynamic racer is built for high-performance."
+    },
+    {
+        "picture": "https://i.ibb.co/KVstDMd/minicar2.webp",
+        "toy_name": "Speed Demon",
+        "sub_category": "Regular-car",
+        "seller_name": "Henry",
+        "seller_email": "deno@toyworld.com",
+        "price": 29.99,
+        "rating": 4.5,
+        "available_quantity": 15,
+        "description": "Get ready for exhilarating speed and thrilling races with our latest regular toy car, the Turbo Racer! This sleek and aerodynamic racer is built for high-performance."
+    },
+    {
+        "picture": "https://i.ibb.co/kK6Qv1Q/minicar6-compressed.jpg",
+        "toy_name": "Fast Tracker",
+        "sub_category": "Regular-car",
+        "seller_name": "Charles",
+        "seller_email": "linda@toyworld.com",
+        "price": 34.99,
+        "rating": 7.5,
+        "available_quantity": 16,
+        "description": "Get ready for exhilarating speed and thrilling races with our latest regular toy car, the Turbo Racer! This sleek and aerodynamic racer is built for high-performance."
+    },
+    {
+        "picture": "https://i.ibb.co/mbsNcyy/minicar7.jpg",
+        "toy_name": "Turbo Racer",
+        "sub_category": "Regular-car",
+        "seller_name": "Swift Motors",
+        "seller_email": "ninja@toyworld.com",
+        "price": 28.99,
+        "rating": 6.5,
+        "available_quantity": 12,
+        "description": "Get ready for exhilarating speed and thrilling races with our latest regular toy car, the Turbo Racer! This sleek and aerodynamic racer is built for high-performance."
+    },
+    {
+        "picture": "https://i.ibb.co/Cnftv1K/minicar1.jpg",
+        "toy_name": "Quickfire",
+        "sub_category": "Regular-car",
+        "seller_name": "Edward",
+        "seller_email": "carpo@toyworld.com",
+        "price": 27.99,
+        "rating": 4.5,
+        "available_quantity": 15,
+        "description": "Get ready for exhilarating speed and thrilling races with our latest regular toy car, the Turbo Racer! This sleek and aerodynamic racer is built for high-performance."
+    },
+    {
+        "picture": "https://i.ibb.co/55cGmkk/truck5.jpg",
+        "toy_name": "Mega Hauler",
+        "sub_category": "Truck-car",
+        "seller_name": "Joseph",
+        "seller_email": "cipra@toyworld.com",
+        "price": 20.99,
+        "rating": 7.5,
+        "available_quantity": 19,
+        "description": "Introducing the mighty Truck Titan, the ultimate toy truck built for adventure and heavy-duty hauling! With its rugged design and imposing presence, this truck toy."
+    },
+    {
+        "picture": "https://i.ibb.co/DW5RpHf/truck4.jpg",
+        "toy_name": "Mighty Mover",
+        "sub_category": "Truck-car",
+        "seller_name": "Daniel",
+        "seller_email": "narjo@toyworld.com",
+        "price": 18.99,
+        "rating": 5.5,
+        "available_quantity": 13,
+        "description": "Introducing the mighty Truck Titan, the ultimate toy truck built for adventure and heavy-duty hauling! With its rugged design and imposing presence, this truck toy."
+    },
+    {
+        "picture": "https://i.ibb.co/5F92GkS/truck3.jpg",
+        "toy_name": "Power Puller",
+        "sub_category": "Truck-car",
+        "seller_name": "Matthew",
+        "seller_email": "raia@toyworld.com",
+        "price": 22.99,
+        "rating": 8.5,
+        "available_quantity": 14,
+        "description": "Introducing the mighty Truck Titan, the ultimate toy truck built for adventure and heavy-duty hauling! With its rugged design and imposing presence, this truck toy."
+    },
+    {
+        "picture": "https://i.ibb.co/BjgFf5S/truck2.jpg",
+        "toy_name": "Monster",
+        "sub_category": "Truck-car",
+        "seller_name": "Alexander",
+        "seller_email": "cipra@toyworld.com",
+        "price": 20.99,
+        "rating": 7.5,
+        "available_quantity": 19,
+        "description": "Introducing the mighty Truck Titan, the ultimate toy truck built for adventure and heavy-duty hauling! With its rugged design and imposing presence, this truck toy."
+    },
+    {
+        "picture": "https://i.ibb.co/gT0576p/truck1.jpg",
+        "toy_name": "Heavy-Duty",
+        "sub_category": "Truck-car",
+        "seller_name": "George",
+        "seller_email": "rai@toyworld.com",
+        "price": 20.99,
+        "rating": 7.5,
+        "available_quantity": 19,
+        "description": "Introducing the mighty Truck Titan, the ultimate toy truck built for adventure and heavy-duty hauling! With its rugged design and imposing presence, this truck toy."
+    }
+]

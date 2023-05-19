@@ -2,7 +2,6 @@ import React from 'react';
 import herocar from '../../../assets/images/banner/herocar.jpg';
 
 const Banner = () => {
-    console.log(process.env)
     return (
         <div className="hero min-h-screen hero-img" style={{ backgroundImage: `url(${herocar})` }}>
             <div className="hero-overlay bg-opacity-45"></div>
