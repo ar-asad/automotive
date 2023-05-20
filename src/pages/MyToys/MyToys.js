@@ -5,13 +5,16 @@ import Loading from '../../shared/Loading/Loading';
 import MyToysCar from '../MyToysCar/MyToysCar';
 import { toast } from 'react-hot-toast';
 import ConfirmationModal from '../../shared/ConfirmationModal/ConfirmationModal';
+import UpdateCarModal from '../UpdateCarModal/UpdateCarModal';
 
 const MyToys = () => {
     const { user } = useContext(AuthContex);
     const [deletingCar, setDeletingCar] = useState(null)
+    const [carInfo, setCarInfo] = useState(null);
 
+
+    // fetch data form server depend on login user email....
     const url = `http://localhost:5000/mytoy?email=${user?.email}`
-
     const { data: addCars = [], isLoading, refetch } = useQuery({
         queryKey: [`mytoy-${user?.email}`],
         queryFn: async () => {
@@ -22,6 +25,7 @@ const MyToys = () => {
     });
 
 
+    // Deleting my added a specific car....
     const handleDeleteCar = car => {
         fetch(`http://localhost:5000/cars/${car._id}`, {
             method: 'DELETE',
@@ -32,7 +36,6 @@ const MyToys = () => {
                     refetch();
                     toast.success(`Car ${car.toy_name} deleted successfully`)
                 }
-
             })
     }
 
@@ -64,15 +67,25 @@ const MyToys = () => {
                             index={index}
                             car={car}
                             setDeletingCar={setDeletingCar}
+                            setCarInfo={setCarInfo}
                         >
                         </MyToysCar>)
                     }
                 </tbody>
             </table>
             {
+                carInfo && <UpdateCarModal
+                    // handleUpdateCar={handleUpdateCar}
+                    modalData={carInfo}
+                    refetch={refetch}
+                    setCarInfo={setCarInfo}
+                >
+                </UpdateCarModal>
+            }
+            {
                 deletingCar && <ConfirmationModal
                     title={`Are you sure want to delete?`}
-                    message={`If you delete ${deletingCar?.name}. It cannot be undone.`}
+                    message={`If you delete ${deletingCar?.toy_name}. It cannot be undone.`}
                     modalData={deletingCar}
                     handleDeleteCar={handleDeleteCar}
                     setDeletingCar={setDeletingCar}
