@@ -44,6 +44,7 @@ const AddToy = () => {
                 if (data.acknowledged) {
                     toast.success("Car added successfully")
                     form.reset();
+
                 }
                 else {
                     toast.error(data.message)

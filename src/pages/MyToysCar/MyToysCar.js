@@ -2,8 +2,8 @@ import React from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Link } from 'react-router-dom';
 
-const MyToysCar = ({ car, index, handleDeleteCar }) => {
-    const { toy_name, sub_category, seller_name, price, available_quantity, picture, _id } = car;
+const MyToysCar = ({ car, index, setDeletingCar }) => {
+    const { toy_name, sub_category, seller_name, price, available_quantity, picture, } = car;
 
 
     return (
@@ -31,7 +31,7 @@ const MyToysCar = ({ car, index, handleDeleteCar }) => {
                 <button className="btn btn-success bg-green-500 text-gray-200 btn-xs"> update</button>
             </th>
             <th>
-                <button onClick={() => handleDeleteCar(car)} className="btn btn-danger  btn-xs"> delete</button>
+                <label onClick={() => setDeletingCar(car)} htmlFor="confirmation-modal" className="btn btn-danger  btn-xs"> delete</label>
             </th>
         </tr>
     );

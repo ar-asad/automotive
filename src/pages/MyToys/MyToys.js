@@ -4,10 +4,11 @@ import { AuthContex } from '../../context/AuthProvider/AuthProvider';
 import Loading from '../../shared/Loading/Loading';
 import MyToysCar from '../MyToysCar/MyToysCar';
 import { toast } from 'react-hot-toast';
+import ConfirmationModal from '../../shared/ConfirmationModal/ConfirmationModal';
 
 const MyToys = () => {
     const { user } = useContext(AuthContex);
-    // const [addCars, setAddCars] = useState([]);
+    const [deletingCar, setDeletingCar] = useState(null)
 
     const url = `http://localhost:5000/mytoy?email=${user?.email}`
 
@@ -29,7 +30,7 @@ const MyToys = () => {
             .then(data => {
                 if (data.deletedCount > 0) {
                     refetch();
-                    toast.success(`Car ${addCars.toy_name} deleted successfully`)
+                    toast.success(`Car ${car.toy_name} deleted successfully`)
                 }
 
             })
@@ -62,12 +63,22 @@ const MyToys = () => {
                             key={car._id}
                             index={index}
                             car={car}
-                            handleDeleteCar={handleDeleteCar}
+                            setDeletingCar={setDeletingCar}
                         >
                         </MyToysCar>)
                     }
                 </tbody>
             </table>
+            {
+                deletingCar && <ConfirmationModal
+                    title={`Are you sure want to delete?`}
+                    message={`If you delete ${deletingCar?.name}. It cannot be undone.`}
+                    modalData={deletingCar}
+                    handleDeleteCar={handleDeleteCar}
+                    setDeletingCar={setDeletingCar}
+                >
+                </ConfirmationModal>
+            }
         </div>
     );
 };

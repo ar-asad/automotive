@@ -14,7 +14,7 @@ const ViewDetailsCar = () => {
                 </figure>
                 <hr />
                 <div className="card-body items-center text-start">
-                    <h2 className="card-title mb-3">{toy_name}</h2>
+                    <h2 className="card-title mb-3 text-2xl">{toy_name}</h2>
                     <div className='grid lg:grid-cols-2 gap-4 mb-4'>
                         <p><span className='text-lg text-gray-800 font-medium'>Supplier</span> : {seller_name}</p>
                         <p><span className='text-lg text-gray-800 font-medium'>Email</span> : {seller_email}</p>
@@ -25,7 +25,7 @@ const ViewDetailsCar = () => {
                     <p><span className='text-lg text-gray-800 font-medium '>Description </span> : {description}</p>
                     <div className="card-actions text-end">
                         <Link to='/alltoy'>
-                            <button className="btn btn-success text-gray-100 bg-green-500 rounded">&rarr; Go Back </button>
+                            <button className="btn btn-success text-gray-100 bg-green-500 rounded mt-6">&rarr; Go Back </button>
                         </Link>
                     </div>
                 </div>
