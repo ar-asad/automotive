@@ -2,8 +2,10 @@ import React from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Link } from 'react-router-dom';
 
-const AllToyCar = ({ car, index }) => {
+const MyToysCar = ({ car, index, handleDeleteCar }) => {
     const { toy_name, sub_category, seller_name, price, available_quantity, picture, _id } = car;
+
+
     return (
         <tr>
             <th>
@@ -19,19 +21,20 @@ const AllToyCar = ({ car, index }) => {
                 </div>
             </td>
             <td>
-                {toy_name}.charAt(0).toUpperCase() + str.slice(1)
+                {toy_name}
             </td>
             <td>{seller_name}</td>
             <td>{sub_category}</td>
             <td>${price}</td>
             <td>{available_quantity}</td>
             <th>
-                <Link to={`/alltoy/${_id}`}>
-                    <button className="btn btn-success bg-green-500 text-gray-200 btn-xs"> view details</button>
-                </Link>
+                <button className="btn btn-success bg-green-500 text-gray-200 btn-xs"> update</button>
+            </th>
+            <th>
+                <button onClick={() => handleDeleteCar(car)} className="btn btn-danger  btn-xs"> delete</button>
             </th>
         </tr>
     );
 };
 
-export default AllToyCar;
+export default MyToysCar;

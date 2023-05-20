@@ -2,7 +2,7 @@ import React from 'react';
 
 const Loading = () => {
     return (
-        <div className='text-center'>
+        <div className='text-center my-28'>
             <div
                 class="inline-block h-10 w-10 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] text-success motion-reduce:animate-[spin_1.5s_linear_infinite]"
                 role="status">

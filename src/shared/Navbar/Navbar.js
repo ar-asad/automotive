@@ -45,7 +45,7 @@ const Navbar = () => {
                     return {
                         color: isActive ? "#22c55e" : "",
                     };
-                }}>Add A Toy
+                }}>Add Toy
                 </NavLink>
             </li>
             <li>
