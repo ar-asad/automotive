@@ -1,9 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { AuthContex } from '../../context/AuthProvider/AuthProvider';
 
 const AddToy = () => {
     const { user } = useContext(AuthContex);
+    const [categorySelected, setCategorySelected] = useState('')
+    console.log(categorySelected)
 
     const handleAddCarInfo = event => {
         event.preventDefault();
@@ -12,7 +14,7 @@ const AddToy = () => {
         const carPhoto = form.carphoto.value;
         const sellerName = form.sellername.value;
         const sellerEmail = form.email.value;
-        const category = form.category.value;
+        const category = categorySelected;
         const price = form.price.value;
         const rating = form.rating.value;
         const quantity = form.quantity.value;
@@ -114,8 +116,18 @@ const AddToy = () => {
                                 Sub-Category
                             </label>
                             <div className="flex flex-col items-start">
-                                <input type="text" name='category' class="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required />
+
                             </div>
+                            <select onChange={(event) => setCategorySelected(event.target.value)} className="select mt-1  w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 ">
+                                <option disabled selected>Choose Sub-Category</option>
+                                <option value='Sports-car'>Sports-car</option>
+                                <option value='Police-car'>Police-car</option>
+                                <option value='Regular-car'>Regular-car</option>
+                                <option value='Truck-car'>Truck-car</option>
+                            </select>
+
+
+
                         </div>
                         <div className="mt-4">
                             <label

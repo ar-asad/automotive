@@ -4,6 +4,7 @@ import Blog from "../../pages/Blog/Blog";
 import Login from "../../pages/Login/Login";
 import Signup from "../../pages/Login/Signup";
 import MyToys from "../../pages/MyToys/MyToys";
+import NotFound from "../../pages/NotFound/NotFound";
 import ViewDetailsCar from "../../pages/ViewDetailsCar/ViewDetailsCar";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
             }
 
         ]
+    },
+    {
+        path: '*',
+        element: <NotFound></NotFound>
     }
 ]);
 export default router;

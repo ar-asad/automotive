@@ -21,9 +21,7 @@ const AllToy = () => {
 
     const handleCarSearch = event => {
         event.preventDefault();
-        const searchValue = (event.target.search.value).toLowerCase();
-        console.log(searchValue);
-        setFectchDataLoading(true);
+        const searchValue = (event.target.value).toLowerCase();
         fetch(`http://localhost:5000/cars?search=${searchValue}`)
             .then(res => res.json())
             .then(data => {
@@ -37,15 +35,16 @@ const AllToy = () => {
     }
     return (
         <div>
-            <div className='text-center my-3'>
-                <form onSubmit={handleCarSearch} className="form-control">
-                    <div className="input-group">
-                        <input type="text" name='search' placeholder="Search…" className="input input-bordered" />
-                        <button type='submit' className="btn btn-square">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-                        </button>
-                    </div>
-                </form>
+            <div className='w-1/4 my-6 mx-auto'>
+                <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-gray-700 undefined"
+                >
+                    Car Name
+                </label>
+                <div className="flex flex-col items-start">
+                    <input onChange={handleCarSearch} type="text" name='name' class="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required />
+                </div>
             </div>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">

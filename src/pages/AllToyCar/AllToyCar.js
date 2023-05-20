@@ -19,7 +19,7 @@ const AllToyCar = ({ car, index }) => {
                 </div>
             </td>
             <td>
-                {toy_name}.charAt(0).toUpperCase() + str.slice(1)
+                {toy_name.charAt(0).toUpperCase() + toy_name.slice(1)}
             </td>
             <td>{seller_name}</td>
             <td>{sub_category}</td>
