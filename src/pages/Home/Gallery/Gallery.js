@@ -10,10 +10,10 @@ import regularcar2 from '../../../assets/images/gallery/minicar1.jpg'
 
 const Gallery = () => {
     return (
-        <div className='mt-20 mb-20'>
-            <div className='text-center'>
-                <h2 className='text-5xl font-bold mb-2'>Products Gallery</h2>
-                <p className='font-semibold text-green-500'>Explore</p>
+        <div className='my-20'>
+            <div className='text-center mb-10 lg:mb-0'>
+                <p className='font-semibold text-green-500 uppercase'>Explore</p>
+                <h2 className='lg:text-5xl text-4xl font-bold '>Products <span className='text-green-500'>Gallery</span></h2>
             </div>
             <div className="container mx-auto px-5 py-2 lg:px-32 lg:pt-24 ">
                 <div className="-m-1 flex flex-wrap md:-m-2">

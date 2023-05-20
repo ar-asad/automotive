@@ -76,7 +76,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <Link to='/'><BsFillCarFrontFill className='w-8 h-8 ms-2 text-green-500'></BsFillCarFrontFill></Link>
-                <Link className="btn btn-ghost font-bold text-xl">Toddler <span className='text-green-500 ms-2'>Car</span></Link>
+                <Link className="btn btn-ghost font-bold text-xl">Auto <span className='text-green-500'>Motive .</span></Link>
             </div>
             <div className="navbar-start hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

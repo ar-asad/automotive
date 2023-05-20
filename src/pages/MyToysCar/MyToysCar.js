@@ -2,7 +2,7 @@ import React from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const MyToysCar = ({ car, index, setDeletingCar, setCarInfo }) => {
-    const { toy_name, sub_category, seller_name, price, available_quantity, picture, _id } = car;
+    const { toy_name, sub_category, seller_name, price, available_quantity, picture, } = car;
 
 
     return (
@@ -20,7 +20,7 @@ const MyToysCar = ({ car, index, setDeletingCar, setCarInfo }) => {
                 </div>
             </td>
             <td>
-                {toy_name}
+                {toy_name.charAt(0).toUpperCase() + toy_name.slice(1)}
             </td>
             <td>{seller_name}</td>
             <td>{sub_category}</td>

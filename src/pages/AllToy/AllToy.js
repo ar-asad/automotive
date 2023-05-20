@@ -38,9 +38,9 @@ const AllToy = () => {
             <div className='w-1/4 my-6 mx-auto'>
                 <label
                     htmlFor="name"
-                    className="block text-sm font-medium text-gray-700 undefined"
+                    className="block text-sm font-medium text-center text-green-500 undefined"
                 >
-                    Car Name
+                    Search Car
                 </label>
                 <div className="flex flex-col items-start">
                     <input onChange={handleCarSearch} type="text" name='name' class="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required />
@@ -57,7 +57,7 @@ const AllToy = () => {
                             <th>Seller Name</th>
                             <th>Sub Category</th>
                             <th>Price</th>
-                            <th>Ouantity</th>
+                            <th>Quantity</th>
                             <th></th>
                         </tr>
                     </thead>
