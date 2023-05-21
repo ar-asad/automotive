@@ -1,11 +1,24 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router-dom';
 import { AuthContex } from '../../context/AuthProvider/AuthProvider';
+import useTitle from '../../Hooks/useTitle';
 
 const Signup = () => {
     const { createUser, googleSignIn, updateUserProfile } = useContext(AuthContex);
+    const [passwordError, setPasswordError] = useState(null);
+    const [signUpError, setSignUpError] = useState(null);
+
+    useTitle('Signup');
+
+    function handlePasswordChange(event) {
+        if (event.target.value.length < 6) {
+            setPasswordError('The password is less than 6 characters');
+        } else {
+            setPasswordError(null);
+        }
+    }
 
     const handleSignup = event => {
         event.preventDefault()
@@ -20,9 +33,12 @@ const Signup = () => {
             .then(result => {
                 console.log(result.user)
                 form.reset()
-                handleUpdateProfileUser(name, photoURL)
+                handleUpdateProfileUser(name, photoURL);
+                toast.success('User created successfully');
             })
-            .catch(e => console.error(e));
+            .catch(e => {
+                setSignUpError(e.message)
+            });
     };
 
     const handleGoogleSignIn = () => {
@@ -83,12 +99,13 @@ const Signup = () => {
                                 Password
                             </label>
                             <div className="flex flex-col items-start">
-                                <input type="password" name='password' class="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required />
+                                <input onChange={handlePasswordChange} type="password" name='password' class="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required />
                             </div>
                         </div>
+                        {passwordError && <p className='text-red-500 font-semibold mt-2'>{passwordError}</p>}
                         <div className="mt-4">
                             <label
-                                htmlFor="password_confirmation"
+                                htmlFor="photo"
                                 className="block text-sm font-medium text-gray-700 undefined"
                             >
                                 Photo URL
@@ -97,6 +114,7 @@ const Signup = () => {
                                 <input type="text" name='photo' class="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required />
                             </div>
                         </div>
+                        {signUpError && <p className='text-red-500 font-semibold mt-2'>{signUpError}</p>}
                         <div className="lg:flex items-center justify-between mt-7">
                             <button
                                 type="submit"
@@ -117,7 +135,7 @@ const Signup = () => {
                     </form>
                     <div className="divider text-slate-500 font-bold mb-5">OR</div>
                     <div className='flex justify-center'>
-                        <button onClick={handleGoogleSignIn} className='bg-green-500 hover:bg-green-400 font-semibold text-gray-100 rounded px-8 py-2 flex justify-center gap-3 items-center'> <FcGoogle className='w-6 h-6'></FcGoogle> Sign In With Google</button>
+                        <button onClick={handleGoogleSignIn} className='bg-green-500 hover:bg-green-400 font-semibold text-gray-100 rounded px-8 py-2 flex justify-center gap-3 items-center'> <FcGoogle className='w-6 h-6'></FcGoogle> Sign Up With Google</button>
                     </div>
                 </div>
             </div>

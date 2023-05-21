@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import Loading from '../../shared/Loading/Loading';
 import AllToyCar from '../AllToyCar/AllToyCar';
+import useTitle from '../../Hooks/useTitle';
 
 
 const AllToy = () => {
     const [allCars, setAllCars] = useState([]);
     const [fetchDataLoading, setFectchDataLoading] = useState(false)
 
+    useTitle('Alltoy')
 
     useEffect(() => {
         setFectchDataLoading(true);

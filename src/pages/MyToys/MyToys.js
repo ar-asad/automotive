@@ -6,12 +6,14 @@ import MyToysCar from '../MyToysCar/MyToysCar';
 import { toast } from 'react-hot-toast';
 import ConfirmationModal from '../../shared/ConfirmationModal/ConfirmationModal';
 import UpdateCarModal from '../UpdateCarModal/UpdateCarModal';
+import useTitle from '../../Hooks/useTitle';
 
 const MyToys = () => {
     const { user } = useContext(AuthContex);
     const [deletingCar, setDeletingCar] = useState(null)
     const [carInfo, setCarInfo] = useState(null);
 
+    useTitle('Mytoy');
 
     // fetch data form server depend on login user email....
     const url = `http://localhost:5000/mytoy?email=${user?.email}`

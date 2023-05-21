@@ -1,11 +1,14 @@
 import React, { useContext, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { AuthContex } from '../../context/AuthProvider/AuthProvider';
+import useTitle from '../../Hooks/useTitle';
 
 const AddToy = () => {
     const { user } = useContext(AuthContex);
     const [categorySelected, setCategorySelected] = useState('')
     console.log(categorySelected)
+
+    useTitle('Addtoy')
 
     const handleAddCarInfo = event => {
         event.preventDefault();

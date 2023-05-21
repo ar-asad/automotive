@@ -1,10 +1,14 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FcGoogle } from "react-icons/fc";
 import { AuthContex } from '../../context/AuthProvider/AuthProvider';
+import useTitle from '../../Hooks/useTitle';
 
 const Login = () => {
     const { signIn, googleSignIn } = useContext(AuthContex);
+    const [error, setError] = useState(null);
+
+    useTitle('Login');
 
     let navigate = useNavigate();
     let location = useLocation();
@@ -25,7 +29,9 @@ const Login = () => {
                 navigate(from, { replace: true });
                 console.log(result.user)
             })
-            .catch(e => console.error(e));
+            .catch(e => {
+                setError(e.message)
+            });
     }
 
     const handleGoogleLogIn = () => {
@@ -71,12 +77,13 @@ const Login = () => {
                                 <input type="password" name='password' class="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " />
                             </div>
                         </div>
+                        {error && <p className='text-red-500 font-semibold mt-2'>{error}</p>}
                         <div className="lg:flex items-center justify-between mt-7">
                             <button
                                 type="submit"
                                 className="btn btn-success rounded px-6 mb-3 text-gray-100 bg-green-500"
                             >
-                                Sign In
+                                Login In
                             </button>
                             <p className='text-semibold '> Don't have an account?
                                 <Link
@@ -90,7 +97,7 @@ const Login = () => {
                         </div>
                     </form> <div className="divider text-slate-500 font-bold mb-5">OR</div>
                     <div className='flex justify-center'>
-                        <button onClick={handleGoogleLogIn} className='bg-green-500 hover:bg-green-400 font-semibold text-gray-100 rounded px-8 py-2 flex justify-center gap-3 items-center'> <FcGoogle className='w-6 h-6'></FcGoogle> Sign Up With Google</button>
+                        <button onClick={handleGoogleLogIn} className='bg-green-500 hover:bg-green-400 font-semibold text-gray-100 rounded px-8 py-2 flex justify-center gap-3 items-center'> <FcGoogle className='w-6 h-6'></FcGoogle> Sign In With Google</button>
                     </div>
 
                 </div>

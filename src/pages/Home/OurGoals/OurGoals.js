@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconName, TbTargetArrow } from "react-icons/tb";
+import { TbTargetArrow } from "react-icons/tb";
 import { GiDiamondHard, GiNotebook } from "react-icons/gi";
 
 const OurGoals = () => {
