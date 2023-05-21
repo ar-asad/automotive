@@ -27,7 +27,6 @@ const Login = () => {
             .then(result => {
                 form.reset();
                 navigate(from, { replace: true });
-                console.log(result.user)
             })
             .catch(e => {
                 setError(e.message)

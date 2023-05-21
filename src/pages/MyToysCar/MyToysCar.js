@@ -4,7 +4,6 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 const MyToysCar = ({ car, index, setDeletingCar, setCarInfo }) => {
     const { toy_name, sub_category, seller_name, price, available_quantity, picture, } = car;
 
-
     return (
         <tr>
             <th>

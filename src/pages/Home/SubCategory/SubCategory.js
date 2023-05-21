@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Tab, TabList, Tabs } from 'react-tabs';
 import SubCategoryCard from '../SubCategoryCard/SubCategoryCard';
 
@@ -13,6 +13,10 @@ const SubCategory = () => {
                 setCategoryData(data)
             })
     };
+
+    useEffect(() => {
+        fetchCategory('Truck-car')
+    }, [])
 
     const handleTabSelect = (index) => {
         if (index === 0) {
