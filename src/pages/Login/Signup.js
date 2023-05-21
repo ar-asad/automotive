@@ -6,7 +6,7 @@ import { AuthContex } from '../../context/AuthProvider/AuthProvider';
 import useTitle from '../../Hooks/useTitle';
 
 const Signup = () => {
-    const { createUser, googleSignIn, updateUserProfile } = useContext(AuthContex);
+    const { createUser, googleSignIn, updateUserProfile, setLoading } = useContext(AuthContex);
     const [passwordError, setPasswordError] = useState(null);
     const [signUpError, setSignUpError] = useState(null);
 
@@ -39,7 +39,10 @@ const Signup = () => {
             })
             .catch(e => {
                 setSignUpError(e.message)
-            });
+            })
+            .finally(() => {
+                setLoading(false);
+            })
     };
 
     const handleGoogleSignIn = () => {
@@ -78,7 +81,7 @@ const Signup = () => {
                                 Full Name
                             </label>
                             <div className="flex flex-col items-start">
-                                <input type="text" name='name' class="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required />
+                                <input type="text" name='name' className="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required />
                             </div>
                         </div>
                         <div className="mt-4">
@@ -89,7 +92,7 @@ const Signup = () => {
                                 Email
                             </label>
                             <div className="flex flex-col items-start">
-                                <input type="email" name='email' class="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required />
+                                <input type="email" name='email' className="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required />
                             </div>
                         </div>
                         <div className="mt-4">
@@ -100,7 +103,7 @@ const Signup = () => {
                                 Password
                             </label>
                             <div className="flex flex-col items-start">
-                                <input onChange={handlePasswordChange} type="password" name='password' class="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required />
+                                <input onChange={handlePasswordChange} type="password" name='password' className="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required />
                             </div>
                         </div>
                         {passwordError && <p className='text-red-500 font-semibold mt-2'>{passwordError}</p>}
@@ -112,7 +115,7 @@ const Signup = () => {
                                 Photo URL
                             </label>
                             <div className="flex flex-col items-start">
-                                <input type="text" name='photo' class="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required />
+                                <input type="text" name='photo' className="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required />
                             </div>
                         </div>
                         {signUpError && <p className='text-red-500 font-semibold mt-2'>{signUpError}</p>}

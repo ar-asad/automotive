@@ -7,18 +7,17 @@ import Loading from "../../shared/Loading/Loading";
 const PrivateRoute = ({ children }) => {
     const { user, loading } = useContext(AuthContex);
     const location = useLocation();
-    // console.log(loading)
-    // console.log(user)
 
     if (loading) {
         return <Loading></Loading>
     }
 
-    if (!user) {
-        return <Navigate to='/signin' state={{ from: location }} replace></Navigate>
+    if (user) {
+        return children;
     }
+    return <Navigate to='/signin' state={{ from: location }} replace />
 
-    return children;
+
 };
 
 export default PrivateRoute;

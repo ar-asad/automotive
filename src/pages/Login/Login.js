@@ -8,13 +8,13 @@ const Login = () => {
     const { signIn, googleSignIn } = useContext(AuthContex);
     const [error, setError] = useState(null);
 
-    useTitle('Login');
-
-    let navigate = useNavigate();
     let location = useLocation();
 
     let from = location.state?.from?.pathname || "/";
 
+    useTitle('Login');
+
+    let navigate = useNavigate();
 
     const handleLogin = event => {
         event.preventDefault()
@@ -25,12 +25,12 @@ const Login = () => {
 
         signIn(email, password)
             .then(result => {
-                form.reset();
                 navigate(from, { replace: true });
+                form.reset();
             })
             .catch(e => {
                 setError(e.message)
-            });
+            })
     }
 
     const handleGoogleLogIn = () => {
@@ -40,6 +40,7 @@ const Login = () => {
                 console.log(result.user)
             })
             .catch(e => console.log(e.message))
+
     }
 
 
