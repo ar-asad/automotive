@@ -63,7 +63,7 @@ const Login = () => {
                                 Email
                             </label>
                             <div className="flex flex-col items-start">
-                                <input type="email" name='email' class="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " />
+                                <input type="email" name='email' className="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " />
                             </div>
                         </div>
                         <div className="mt-4">
@@ -74,7 +74,7 @@ const Login = () => {
                                 Password
                             </label>
                             <div className="flex flex-col items-start">
-                                <input type="password" name='password' class="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " />
+                                <input type="password" name='password' className="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " />
                             </div>
                         </div>
                         {error && <p className='text-red-500 font-semibold mt-2'>{error}</p>}

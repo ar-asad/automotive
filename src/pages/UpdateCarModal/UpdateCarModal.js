@@ -17,7 +17,7 @@ const UpdateCarModal = ({ modalData, refetch, setCarInfo }) => {
             description: description
         }
 
-        fetch(`http://localhost:5000/cars/${modalData._id}`, {
+        fetch(`https://toy-town-server-one.vercel.app/cars/${modalData._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -55,7 +55,7 @@ const UpdateCarModal = ({ modalData, refetch, setCarInfo }) => {
                                 Car Price
                             </label>
                             <div className="flex flex-col items-start">
-                                <input defaultValue={modalData?.price} type="text" name='carprice' class="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required />
+                                <input defaultValue={modalData?.price} type="text" name='carprice' className="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required />
                             </div>
                         </div>
                         <div className="mt-4">
@@ -66,7 +66,7 @@ const UpdateCarModal = ({ modalData, refetch, setCarInfo }) => {
                                 Available Quantity
                             </label>
                             <div className="flex flex-col items-start">
-                                <input defaultValue={modalData?.available_quantity} type="text" name='quantity' class="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required />
+                                <input defaultValue={modalData?.available_quantity} type="text" name='quantity' className="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required />
                             </div>
                         </div>
                         <div className="mt-4">
@@ -77,7 +77,7 @@ const UpdateCarModal = ({ modalData, refetch, setCarInfo }) => {
                                 Description
                             </label>
                             <div className="flex flex-col items-start">
-                                <textarea rows="4" type="text" name='description' class="textarea mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required ></textarea>
+                                <textarea rows="4" type="text" name='description' className="textarea mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required ></textarea>
                             </div>
                         </div>
 

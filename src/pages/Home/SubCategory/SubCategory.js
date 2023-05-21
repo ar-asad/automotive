@@ -7,10 +7,9 @@ const SubCategory = () => {
 
 
     const fetchCategory = (category) => {
-        fetch(`http://localhost:5000/cars/category?category=${category}`)
+        fetch(`https://toy-town-server-one.vercel.app/cars/category?category=${category}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 setCategoryData(data)
             })
     };

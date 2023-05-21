@@ -1,13 +1,11 @@
 import React, { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { AuthContex } from '../../../context/AuthProvider/AuthProvider';
 import { toast } from 'react-hot-toast';
 
 const SubCategoryCard = ({ category }) => {
     const { user } = useContext(AuthContex);
     const { picture, toy_name, price, rating, _id } = category;
-
-    const navigate = useNavigate();
 
     return (
         <div className="card  bg-base-100 shadow-lg">
@@ -31,7 +29,6 @@ const SubCategoryCard = ({ category }) => {
                                     className="btn btn-success bg-green-500 text-gray-200 ">
                                     view details</button>
                             </Link>
-                        // toast.success("You have to log in first to view details")
                     }
 
                 </div>

@@ -12,7 +12,7 @@ const AllToy = () => {
 
     useEffect(() => {
         setFectchDataLoading(true);
-        fetch('http://localhost:5000/cars')
+        fetch('https://toy-town-server-one.vercel.app/cars')
             .then(res => res.json())
             .then(data => {
 
@@ -24,7 +24,7 @@ const AllToy = () => {
     const handleCarSearch = event => {
         event.preventDefault();
         const searchValue = (event.target.value).toLowerCase();
-        fetch(`http://localhost:5000/cars?search=${searchValue}`)
+        fetch(`https://toy-town-server-one.vercel.app/cars?search=${searchValue}`)
             .then(res => res.json())
             .then(data => {
                 setAllCars(data)
@@ -45,7 +45,7 @@ const AllToy = () => {
                     Search Car
                 </label>
                 <div className="flex flex-col items-start">
-                    <input onChange={handleCarSearch} type="text" name='name' class="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required />
+                    <input onChange={handleCarSearch} type="text" name='name' className="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required />
                 </div>
             </div>
             <div className="overflow-x-auto w-full">

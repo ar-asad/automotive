@@ -28,14 +28,6 @@ const Gallery = () => {
                 <div className="-m-1 flex flex-wrap md:-m-2">
                     <div className="flex w-1/2 flex-wrap">
                         <div
-                            // data-aos="zoom-down"
-                            // data-aos-offset="200"
-                            // data-aos-delay="100"
-                            // data-aos-duration="1000"
-                            // data-aos-easing="ease-in-out"
-                            // data-aos-mirror="true"
-                            // data-aos-once="false"
-                            // data-aos-anchor-placement="top-center"
                             className="w-1/2 p-1 md:p-2">
                             <img
                                 alt="gallery"
@@ -43,14 +35,6 @@ const Gallery = () => {
                                 src={sportscar1} />
                         </div>
                         <div
-                            // data-aos="fade-up"
-                            // data-aos-offset="200"
-                            // data-aos-delay="150"
-                            // data-aos-duration="1000"
-                            // data-aos-easing="ease-in-out"
-                            // data-aos-mirror="true"
-                            // data-aos-once="false"
-                            // data-aos-anchor-placement="center"
                             className="w-1/2 p-1 md:p-2">
                             <img
                                 alt="gallery"
@@ -58,7 +42,6 @@ const Gallery = () => {
                                 src={regularcar2} />
                         </div>
                         <div
-
                             className="w-full p-1 md:p-2">
                             <img
                                 alt="gallery"
@@ -67,7 +50,6 @@ const Gallery = () => {
                         </div>
                     </div>
                     <div
-
                         className="flex w-1/2 flex-wrap">
                         <div className="w-full p-1 md:p-2">
                             <img
@@ -76,7 +58,6 @@ const Gallery = () => {
                                 src={truckcar2} />
                         </div>
                         <div
-
                             className="w-1/2 p-1 md:p-2">
                             <img
                                 alt="gallery"
@@ -84,7 +65,6 @@ const Gallery = () => {
                                 src={truckcar1} />
                         </div>
                         <div
-
                             className="w-1/2 p-1 md:p-2">
                             <img
                                 alt="gallery"
@@ -92,7 +72,6 @@ const Gallery = () => {
                                 src={policecar2} />
                         </div>
                         <div
-
                             className="w-1/2 p-1 md:p-2">
                             <img
                                 alt="gallery"
@@ -100,14 +79,12 @@ const Gallery = () => {
                                 src={policecar1} />
                         </div>
                         <div
-
                             className="w-1/2 p-1 md:p-2">
                             <img
                                 alt="gallery"
                                 className="block h-full w-full rounded-lg object-cover object-center"
                                 src={regularcar1} />
                         </div>
-
                     </div>
                 </div>
             </div>

@@ -6,7 +6,6 @@ import useTitle from '../../Hooks/useTitle';
 const AddToy = () => {
     const { user } = useContext(AuthContex);
     const [categorySelected, setCategorySelected] = useState('')
-    console.log(categorySelected)
 
     useTitle('Addtoy');
 
@@ -36,7 +35,7 @@ const AddToy = () => {
             description
         }
 
-        fetch('http://localhost:5000/cars', {
+        fetch('https://toy-town-server-one.vercel.app/cars', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -75,7 +74,7 @@ const AddToy = () => {
                                 Car Name
                             </label>
                             <div className="flex flex-col items-start">
-                                <input type="text" name='carname' class="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required />
+                                <input type="text" name='carname' className="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required />
                             </div>
                         </div>
                         <div className="mt-4">
@@ -86,7 +85,7 @@ const AddToy = () => {
                                 Photo URL
                             </label>
                             <div className="flex flex-col items-start">
-                                <input type="text" name='carphoto' class="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required />
+                                <input type="text" name='carphoto' className="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required />
                             </div>
                         </div>
                         <div>
@@ -97,7 +96,7 @@ const AddToy = () => {
                                 Seller Name
                             </label>
                             <div className="flex flex-col items-start">
-                                <input type="text" defaultValue={user?.displayName} name='sellername' class="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required />
+                                <input type="text" defaultValue={user?.displayName} name='sellername' className="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required />
                             </div>
                         </div>
                         <div className="mt-4">
@@ -108,7 +107,7 @@ const AddToy = () => {
                                 Seller Email
                             </label>
                             <div className="flex flex-col items-start">
-                                <input type="email" defaultValue={user?.email} name='email' class="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required />
+                                <input type="email" defaultValue={user?.email} name='email' className="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required />
                             </div>
                         </div>
                         <div>
@@ -137,7 +136,7 @@ const AddToy = () => {
                                 Car Price
                             </label>
                             <div className="flex flex-col items-start">
-                                <input type="text" name='price' class="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required />
+                                <input type="text" name='price' className="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required />
                             </div>
                         </div>
                         <div className="mt-4">
@@ -148,7 +147,7 @@ const AddToy = () => {
                                 Rating
                             </label>
                             <div className="flex flex-col items-start">
-                                <input type="text" name='rating' class="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required />
+                                <input type="text" name='rating' className="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required />
                             </div>
                         </div>
                         <div className="mt-4">
@@ -159,7 +158,7 @@ const AddToy = () => {
                                 Available Quantity
                             </label>
                             <div className="flex flex-col items-start">
-                                <input type="text" name='quantity' class="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required />
+                                <input type="text" name='quantity' className="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required />
                             </div>
                         </div>
 
@@ -172,7 +171,7 @@ const AddToy = () => {
                             Description
                         </label>
                         <div className="flex flex-col items-start">
-                            <textarea rows="4" type="text" name='description' class="textarea mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required ></textarea>
+                            <textarea rows="4" type="text" name='description' className="textarea mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded text-sm shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 " required ></textarea>
                         </div>
                     </div>
                     <div className=" text-center mt-10">

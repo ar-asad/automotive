@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { AuthContex } from '../../context/AuthProvider/AuthProvider';
 import Loading from '../../shared/Loading/Loading';
 import MyToysCar from '../MyToysCar/MyToysCar';
@@ -16,7 +16,7 @@ const MyToys = () => {
     useTitle('Mytoy');
 
     // fetch data form server depend on login user email....
-    const url = `http://localhost:5000/mytoy?email=${user?.email}`
+    const url = `https://toy-town-server-one.vercel.app/mytoy?email=${user?.email}`
     const { data: addCars = [], isLoading, refetch } = useQuery({
         queryKey: [`mytoy-${user?.email}`],
         queryFn: async () => {
@@ -29,7 +29,7 @@ const MyToys = () => {
 
     // Deleting my added a specific car....
     const handleDeleteCar = car => {
-        fetch(`http://localhost:5000/cars/${car._id}`, {
+        fetch(`https://toy-town-server-one.vercel.app/cars/${car._id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())
