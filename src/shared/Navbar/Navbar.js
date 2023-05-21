@@ -1,16 +1,18 @@
-import React, { useState, useContext } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, Navigate, useNavigate } from 'react-router-dom';
 import { AuthContex } from "../../../src/context/AuthProvider/AuthProvider";
 import { BsFillCarFrontFill } from "react-icons/bs";
+import { useContext } from 'react';
 
 const Navbar = () => {
-    // const [user, setUser] = useState('');
     const { user, logOut } = useContext(AuthContex);
-    console.log(user)
+
+    let navigate = useNavigate();
 
     const handleLogOut = () => {
         logOut()
-            .then(() => { })
+            .then(() => {
+                navigate('/signin')
+            })
             .catch(error => console.error(error))
     }
 

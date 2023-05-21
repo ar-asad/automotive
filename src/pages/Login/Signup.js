@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { FcGoogle } from 'react-icons/fc';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContex } from '../../context/AuthProvider/AuthProvider';
 import useTitle from '../../Hooks/useTitle';
 
@@ -11,6 +11,7 @@ const Signup = () => {
     const [signUpError, setSignUpError] = useState(null);
 
     useTitle('Signup');
+    let navigate = useNavigate();
 
     function handlePasswordChange(event) {
         if (event.target.value.length < 6) {
@@ -27,7 +28,6 @@ const Signup = () => {
         const photoURL = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name, email, password);
 
         createUser(email, password)
             .then(result => {
@@ -35,6 +35,7 @@ const Signup = () => {
                 form.reset()
                 handleUpdateProfileUser(name, photoURL);
                 toast.success('User created successfully');
+                navigate('/')
             })
             .catch(e => {
                 setSignUpError(e.message)

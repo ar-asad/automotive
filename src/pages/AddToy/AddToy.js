@@ -8,7 +8,7 @@ const AddToy = () => {
     const [categorySelected, setCategorySelected] = useState('')
     console.log(categorySelected)
 
-    useTitle('Addtoy')
+    useTitle('Addtoy');
 
     const handleAddCarInfo = event => {
         event.preventDefault();
@@ -128,9 +128,6 @@ const AddToy = () => {
                                 <option value='Regular-car'>Regular-car</option>
                                 <option value='Truck-car'>Truck-car</option>
                             </select>
-
-
-
                         </div>
                         <div className="mt-4">
                             <label

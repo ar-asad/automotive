@@ -27,7 +27,8 @@ const UpdateCarModal = ({ modalData, refetch, setCarInfo }) => {
             .then(res => res.json())
             .then(data => {
                 if (data.modifiedCount > 0) {
-                    toast.success(`${modalData?.toy_name} car updated successfully`)
+                    form.reset();
+                    toast.success(`${modalData?.toy_name} car updated successfully`);
                     refetch()
                 }
             });
