@@ -32,7 +32,6 @@ const UpdateCarModal = ({ modalData, refetch, setCarInfo }) => {
                     refetch()
                 }
             });
-
     }
 
     return (
