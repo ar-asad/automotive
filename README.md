@@ -4,25 +4,27 @@
 
 
 ### About AUTOMOTIVE:
-- This is a one kind of toy car selling website.
-- In this home component User can see category wise toy car and see the viewdetails a specific car.
-- In this home user will be see other customer ratings.
+- The website is a toy car-selling website.
+- User Google Sign in and Email/Password Login are secured by Firebase authentication.
+- Implemented CRUD method with MongoDB database.
 - User can also added a toy car and also update and delete the car.
-- User cannot enter the viewdetails,add-car and my-add car without login or signup.
+- Users can easily add, delete, and update toy cars with this system, and access valuable customer reviews.
 - Have a blog componet there I given some question answer.
 
 
 # Technology Used:
 - ReactJS
 - React Router
-- firebase
-- Tailwind
+- Firebase
+- Tailwind CSS
 - daisyUI
 - React useQuery
 - React-lazy-load
 - React Icons
 - React Toastify
 - Node js
+- Dotenv
 - Express js
 - Mongodb
+- Vercel
 
